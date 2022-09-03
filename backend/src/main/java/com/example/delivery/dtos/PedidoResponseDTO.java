@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import com.example.delivery.StatusPedido;
-import com.example.delivery.entidade.Cliente;
 
 public class PedidoResponseDTO implements Serializable{
 
@@ -16,9 +15,9 @@ public class PedidoResponseDTO implements Serializable{
 	
 	private LocalDate dataPedido;
 
-	private ClienteResponseDTO cliente;
-	
 	private StatusPedido statusPedido;
+
+	private ClienteResponseDTO cliente;
 	
 	public String getNumeroPedido() {
 		return numeroPedido;

@@ -83,6 +83,5 @@ public class ClienteService {
 			throw new NullPointerException("Cliente não encontrado");
 		}
 		return cliente;
-		
 	}
 }

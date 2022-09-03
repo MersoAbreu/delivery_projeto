@@ -5,6 +5,8 @@ public class EntregaRequestDTO {
 
 	private Long id;
 
+	private Long idPedido;
+	
 	private String logradouro;
 	
 	private String numero;
@@ -72,5 +74,15 @@ public class EntregaRequestDTO {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
+	public Long getIdPedido() {
+		return idPedido;
+	}
+
+	public void setIdPedido(Long idPedido) {
+		this.idPedido = idPedido;
+	}
+
+
 	
 }

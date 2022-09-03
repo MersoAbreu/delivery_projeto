@@ -3,11 +3,11 @@ package com.example.delivery.service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import com.example.delivery.StatusPedido;
 import com.example.delivery.dtos.ClienteResponseDTO;
 import com.example.delivery.dtos.PedidoRequestDTO;
 import com.example.delivery.dtos.PedidoResponseDTO;
@@ -36,7 +36,7 @@ public class PedidoService {
 		pedido.setNumeroPedido(uuid.toString());
 		pedido.setCliente(cliente);
 		pedido.setDataPedido(LocalDate.now());
-		pedido.setStatusPedido(pedido.getStatusPedido().ABERTO);
+		pedido.setStatusPedido(StatusPedido.ABERTO);
 		pedido = this.pedidoRepository.save(pedido);
 		
 		ClienteResponseDTO clienteResponse = new ClienteResponseDTO();
@@ -76,7 +76,73 @@ public class PedidoService {
 		return listaResponse;
 	}
 
+	public PedidoResponseDTO buscarPorId(Long id) {
+		Pedido pedido = this.pedidoRepository.findById(id).get();
+		if(pedido == null) {
+			throw new NullPointerException("Pedido não encontrado");
+		}
+		ClienteResponseDTO clienteResponse = new ClienteResponseDTO();
+		clienteResponse.setId(pedido.getCliente().getId());
+		clienteResponse.setNome(pedido.getCliente().getNome());
+		
+		
+		PedidoResponseDTO pedidoResponse = new PedidoResponseDTO();
+		pedidoResponse.setCliente(clienteResponse);
+		pedidoResponse.setDataPedido(pedido.getDataPedido());
+		pedidoResponse.setId(pedido.getId());
+		pedidoResponse.setNumeroPedido(pedido.getNumeroPedido());
+		pedidoResponse.setStatusPedido(pedido.getStatusPedido());
+		
+		return pedidoResponse;
+	}
+
+	public void deletar(Long id) {
+		Pedido pedido = this.pedidoRepository.findById(id).get();
+		if(pedido == null) {
+			throw new NullPointerException("Pedido não encontrado");
+		}
+		this.pedidoRepository.delete(pedido);
+	}
+
+	public PedidoResponseDTO alterarPedido(Long id, PedidoRequestDTO pedidoRequestDTO){
+		Cliente clienteRetorno = this.clienteService.buscarClientePorId(pedidoRequestDTO.getIdCliente());
+		if(clienteRetorno == null) {
+			throw new NullPointerException("Cliente não encontrado");
+		}
+		
+		Pedido pedido = this.pedidoRepository.findById(id).get();
+		if(pedido == null) {
+			throw new NullPointerException("Pedido não encontrado");
+		}
+		
+		ClienteResponseDTO clienteResponse = new ClienteResponseDTO();
+		clienteResponse.setId(clienteRetorno.getId());
+		clienteResponse.setNome(clienteRetorno.getNome());
+		
+		pedido.setCliente(clienteRetorno);
+		pedido = this.pedidoRepository.save(pedido);
+		
+		PedidoResponseDTO pedidoResponse = new PedidoResponseDTO();
+		pedidoResponse.setCliente(clienteResponse);
+		pedidoResponse.setDataPedido(pedido.getDataPedido());
+		pedidoResponse.setId(pedido.getId());
+		pedidoResponse.setNumeroPedido(pedido.getNumeroPedido());
+		pedidoResponse.setStatusPedido(pedido.getStatusPedido());
+		
+		return pedidoResponse;
+	}
 	
-	
+	public Pedido buscarPedidoPorId(Long id) {
+		Pedido pedido = this.pedidoRepository.findById(id).get();
+		if(pedido == null) {
+			throw new NullPointerException("Pedido não encontrada");
+		}
+		return pedido;
+	}
+
+	public Pedido alterarStatusPedidoParaFechado(Pedido pedido) {
+		pedido.setStatusPedido(StatusPedido.FECHADO);
+		return this.pedidoRepository.save(pedido);
+	}
 	
 }

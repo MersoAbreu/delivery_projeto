@@ -10,14 +10,14 @@ public class PedidoRequestDTO implements Serializable {
 
 	private Long id;
 
-	private Long idCliente;
+	private Long idPedido;
 
 	public Long getIdCliente() {
-		return idCliente;
+		return idPedido;
 	}
 
-	public void setIdCliente(Long idCliente) {
-		this.idCliente = idCliente;
+	public void setIdCliente(Long idPedido) {
+		this.idPedido = idPedido;
 	}
 
 	public Long getId() {

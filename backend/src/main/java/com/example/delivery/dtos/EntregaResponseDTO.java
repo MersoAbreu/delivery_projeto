@@ -19,7 +19,9 @@ public class EntregaResponseDTO implements Serializable {
 	private String cidade;
 	
 	private String estado;
-
+	
+	private PedidoResponseDTO pedido;
+	
 	public Long getId() {
 		return id;
 	}
@@ -74,6 +76,14 @@ public class EntregaResponseDTO implements Serializable {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+	public PedidoResponseDTO getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(PedidoResponseDTO pedido) {
+		this.pedido = pedido;
 	}
 	
 	
