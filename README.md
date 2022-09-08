@@ -2,7 +2,7 @@
 ### Bem vindo ao meu perfil GitHub 👋
 
 <h3>Tecnologias utilizadas neste projeto</h3>
-<div>
+<div style="border:1px solid red">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" width="40" height="40" />
 </div>
 <div>
