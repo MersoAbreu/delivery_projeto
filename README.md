@@ -36,3 +36,43 @@
 
 <p>Para visualizar as API, o swagger esta habilitado basta clicar neste link para que ele seja apresentado</p>
 <a href="http://localhost:8080/delivery/swagger-ui.html">Swagger</a>
+
+
+ 
+<h4>API's </h4>
+<p>O projeto consiste de 3 APIs, sendo elas:</p>
+<ul>
+ <li>
+  <h5>cliente-controller</h5>
+   <ul>
+      <h7>Metodos HTTP</h7>
+       <li>gGet --> /clientes</li>
+       <li>Post --> /clientes</li>
+       <li>Get --> /clientes/{id} </li>
+       <li>Put --> /clientes/{id} </li>
+        <li>Delete --> /clientes/{id} </li>
+  </ul>
+ </li>
+  <li>
+  <h5>entrega-controller</h5>
+   <ul>
+       <h7>Metodos HTTP</h7>
+       <li>cliente-controller</li>
+       <li>cliente-controller</li>
+       <li>cliente-controller</li>
+       <li>cliente-controller</li>
+  </ul>
+ </li>
+  <li>
+  <h5>pedido-controller</h5>
+   <ul>
+       <h7>Metodos HTTP</h7>
+       <li>cliente-controller</li>
+       <li>cliente-controller</li>
+       <li>cliente-controller</li>
+       <li>cliente-controller</li>
+  </ul>
+ </li>
+
+</ul>
+
