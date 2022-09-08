@@ -1,0 +1,81 @@
+Json insomnia /  Postman
+
+clientes-controller
+Post:
+url- http://localhost:8080/delivery/clientes
+{
+   "nome":"Nome Cliente"
+}
+
+Get:
+url: http://localhost:8080/delivery/clientes
+
+getById:
+url: http://localhost:8080/delivery/clientes/1
+
+Put:
+url: http://localhost:8080/delivery/clientes/1
+{
+   "nome":"Nome Cliente"
+}
+
+Delete:
+url: http://localhost:8080/delivery/clientes/1
+
+
+entregas-controller
+Post:
+url: http://localhost:8080/delivery/entregas
+{
+	"logradouro":"Rua Mauricio Antunes Ferraz",
+	"numero":"362",
+	"bairro":"Parque Maraba",
+	"cidade":"Taboao Serra",
+	"cep":"86.996-00000",
+	"estado":"SP",
+	"idPedido":1
+}
+
+
+Get:
+url: http://localhost:8080/delivery/entregas
+
+GetById:
+url: http://localhost:8080/delivery/entregas/2
+
+Put:
+url: http://localhost:8080/delivery/entregas/3
+{
+	"logradouro":"Rua Idelfonso de Souza Magalhaes",
+	"numero":"362",
+	"bairro":"Centro",
+	"cidade":"Taboao Serra",
+	"cep":"86.996-00000",
+	"estado":"SP"
+}
+
+Delete:
+url: http://localhost:8080/delivery/entregas/3
+
+pedidos-controller
+Post:
+url: http://localhost:8080/delivery/pedidos
+{
+  "idCliente":3
+}
+
+
+Get:
+url: http://localhost:8080/delivery/pedidos
+
+GetById:
+url: http://localhost:8080/delivery/pedidos/2
+
+Put:
+url:http://localhost:8080/delivery/pedidos/1
+{	
+ "idCliente":3	
+}
+
+Delete:
+url: http://localhost:8080/delivery/pedidos/2
