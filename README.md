@@ -18,4 +18,4 @@
 
 <h4>Configuração de ambiente</h4>
 <p>Ao clonar o projeto, abra sua IDE de escolha e importe o projeto conforme imagem</p>
-![image]()
+![image](https://github.com/MersoAbreu/delivery_projeto/tree/main/assets/import_project)
