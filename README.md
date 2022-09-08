@@ -46,7 +46,7 @@
   <h5>cliente-controller</h5>
    <ul>
       <h7>Metodos HTTP</h7>
-       <li>gGet --> /clientes</li>
+       <li>Get --> /clientes</li>
        <li>Post --> /clientes</li>
        <li>Get --> /clientes/{id} </li>
        <li>Put --> /clientes/{id} </li>
@@ -57,22 +57,25 @@
   <h5>entrega-controller</h5>
    <ul>
        <h7>Metodos HTTP</h7>
-       <li>cliente-controller</li>
-       <li>cliente-controller</li>
-       <li>cliente-controller</li>
-       <li>cliente-controller</li>
+       <li>Get --> /entregas</li>
+       <li>Post --> /entregas</li>
+       <li>Get --> /entregas/{id} </li>
+       <li>Put --> /entregas/{id} </li>
+       <li>Delete --> /entregas/{id} </li>
   </ul>
  </li>
   <li>
   <h5>pedido-controller</h5>
    <ul>
        <h7>Metodos HTTP</h7>
-       <li>cliente-controller</li>
-       <li>cliente-controller</li>
-       <li>cliente-controller</li>
-       <li>cliente-controller</li>
+       <li>Get --> /pedidos</li>
+       <li>Post --> /pedidos</li>
+       <li>Get --> /pedidos/{id} </li>
+       <li>Put --> /pedidos/{id} </li>
+       <li>Delete --> /pedidos/{id} </li>
   </ul>
  </li>
-
 </ul>
 
+<h4>Arquivos insominia</h4>
+<p> Para facilitar dentro da pasta assets existe um arquivo com os JSON's pré definido para cada chamada via Postman ou Insomnia
